@@ -1,0 +1,89 @@
+@import 'base';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: var(--color-text);
+
+  font-weight: normal;
+  
+  opacity: 1;
+  
+  @media (min-width: 1024px) {
+    padding: 0 2rem;
+  }
+
+}
+.fa {
+  width: 1.25em;
+  display: inline-block;
+  fill: currentcolor;
+}
+
+p {
+  margin-bottom: 1rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.prose {
+  color: currentcolor;
+}
+
+.no-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.page .blok {
+  padding: 1rem;
+  
+  &.wide {
+    @apply col-span-2 xl:col-span-3;
+  }
+}
+
+footer {
+  &:before {
+    background: var(--color-text);
+    width: 100%;
+    height: 5px;
+    content: '';
+    display: block;
+    margin-bottom: 1rem;
+  }
+}
+#logo {
+  width: auto;
+  height: 3rem;
+  display: block;
+}
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1) !important;
+  transition: 0.2s;
+}
+
+a {
+  padding: 0.125rem;
+  &:hover {
+    @media (hover: hover) {
+      background-color: hsla(160, 100%, 37%, 0.2);
+    }
+  }
+}
+
+@media (prefers-reduced-motion) {
+  html *,
+  html *:before,
+  html *:after {
+    animation: none !important;
+  }
+}

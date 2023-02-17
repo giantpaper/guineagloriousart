@@ -1,0 +1,10 @@
+{
+  "identifier" : "FA684A37-E4EE-465B-A042-7E231AE3BBEA",
+  "ignoredFilePatterns" : [
+    ".secret",
+    "node_modules"
+  ],
+  "remotePath" : "\/home\/giantpap\/~guineaglorious.art",
+  "server" : "Hawkhost",
+  "usesPublishing" : true
+}
