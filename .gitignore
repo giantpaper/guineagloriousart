@@ -27,3 +27,4 @@ coverage
 *.sln
 *.sw?
 .secret
+.nova/Publishing/Hawkhost.json
