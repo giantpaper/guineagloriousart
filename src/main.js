@@ -5,6 +5,7 @@ import router from './router'
 
 // Components
 import General from './components/General.vue'
+import Heading from './components/Heading.vue'
 import Page from './components/Page.vue'
 import Body from './components/Body.vue'
 
@@ -21,6 +22,7 @@ app.use(StoryblokVue, {
 
 app.use(router)
 app.component('General', General)
+app.component('Heading', Heading)
 app.component('Page', Page)
 app.component('Body', Body)
 
