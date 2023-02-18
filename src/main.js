@@ -4,7 +4,7 @@ import App from './App.vue'
 import router from './router'
 
 // Components
-import Content from './components/Content.vue'
+import General from './components/General.vue'
 import Page from './components/Page.vue'
 import Body from './components/Body.vue'
 
@@ -20,7 +20,7 @@ app.use(StoryblokVue, {
 })
 
 app.use(router)
-app.component('Content', Content)
+app.component('General', General)
 app.component('Page', Page)
 app.component('Body', Body)
 

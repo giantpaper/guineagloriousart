@@ -49,16 +49,6 @@ p {
   }
 }
 
-footer {
-  &:before {
-    background: var(--color-text);
-    width: 100%;
-    height: 5px;
-    content: '';
-    display: block;
-    margin-bottom: 1rem;
-  }
-}
 #logo {
   width: auto;
   height: 3rem;
@@ -67,7 +57,7 @@ footer {
 a,
 .green {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1) !important;
+  color: hsla(160, 100%, 37%, 1);
   transition: 0.2s;
 }
 

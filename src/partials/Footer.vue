@@ -5,7 +5,7 @@
 <template>
 	<footer class="pb-8 text-center">
 		<div class="md:flex md:justify-between">
-			<div class="md:text-left">Made by me!</div>
+			<div class="md:text-left flex items-center">Made by me!</div>
 			<div class="md:text-right flex items-center gap-3 made_with_love">
 				<span class="label">Made with love using</span>
 				<ul class="flex links gap-3">
@@ -25,6 +25,14 @@
 		letter-spacing: 0.1rem;
 		* {
 			font-weight: inherit;
+		}
+		&:before {
+			background: var(--color-text);
+			width: 100%;
+			height: 5px;
+			content: '';
+			display: block;
+			margin-bottom: 0.5rem;
 		}
 	}
 	.links {
