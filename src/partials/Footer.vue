@@ -4,13 +4,20 @@
 
 <template>
 	<footer class="pb-8 text-center">
-		<div class="md:flex md:justify-between">
-			<div class="md:text-left flex items-center">Made by me!</div>
-			<div class="md:text-right flex items-center gap-3 made_with_love">
+		<div class="flex flex-col md:flex-row md:justify-between gap-4">
+			<div class="md:text-left flex items-center justify-center md:justify-start gap-2">
+				Made by me!
+				|
+				<ul class="flex links icons gap-3">
+					<li class="mastodon"><a href="https://mastodon.social/@giantpaper" title="Mastodon" target="_blank" rel="noopener me">Mastodon</a></li>
+				</ul>
+			</div>
+			<div class="md:text-right flex items-center justify-center md:justify-end gap-3 made_with_love">
 				<span class="label">Made with love using</span>
-				<ul class="flex links gap-3">
-					<li class="storyblok"><a href="https://www.storyblok.com/" target="_blank" rel="noopener">Storyblok</a></li>
-					<li class="vue"><a href="https://vuejs.org/" target="_blank" rel="noopener">Vue</a></li>
+				<ul class="flex links icons gap-3">
+					<li class="storyblok"><a href="https://www.storyblok.com/" title="Storyblok" target="_blank" rel="noopener">Storyblok</a></li>
+					<li class="vue"><a href="https://vuejs.org/" title="Vue" target="_blank" rel="noopener">Vue</a></li>
+					<li class="tailwind"><a href="https://tailwindcss.com/" title="Tailwind" target="_blank" rel="noopener">Tailwind</a></li>
 				</ul>
 			</div>
 		</div>
@@ -22,20 +29,22 @@
 		font-size: 0.8em;
 		text-transform: uppercase;
 		font-weight: bold;
+		padding: 0.5rem 2rem;
 		letter-spacing: 0.1rem;
 		* {
 			font-weight: inherit;
 		}
 		&:before {
 			background: var(--color-text);
-			width: 100%;
+			width: calc(100% + 4rem);
 			height: 5px;
 			content: '';
 			display: block;
-			margin-bottom: 0.5rem;
+			margin: 0 -2rem;
+			transform: translateY(-0.5rem);
 		}
 	}
-	.links {
+	.icons {
 		li {
 			position: relative;
 			&:before {
@@ -69,6 +78,16 @@
 			}
 			&.vue a:before {
 				background-image: url('../assets/icons/vue_logo.png');
+			}
+			&.mastodon a:before {
+				background-image: url('../assets/icons/Mastodon_logo.svg');
+			}
+			&.github a:before {
+				background-image: url('../assets/icons/Github_logo.png');
+			}
+			&.tailwind a:before {
+				background-image: url('../assets/icons/Tailwind_logo.svg');
+				background-size: 75%;
 			}
 		}
 	}
