@@ -41,3 +41,13 @@ app.component('Spacer', Spacer)
 app.component('Thumbnail', Thumbnail)
 
 app.mount('#app')
+window.getPageSlug = getPageSlug// setBodySlug()setTimeout(() => {		// document.querySelector('a[href]').addEventListener('click', e => {	// 	console.log(e.target.tagName, document.querySelector('a[href]').tagName)	// 	if(e.target.href !== '#') {	// 		console.log('clicked!', e.target)	// 		setBodySlug()	// 	}	// })		if (document.querySelector('a[href="#"]') !== null) {		document.querySelector('a[href="#"]').addEventListener('click', function (e) {			e.preventDefault()		})	}	})const getPageSlug = (name) => {
+	let url = name ?? window.location.href
+	let s = url.match(/https?:\/\/[^\/]+\/(.+)\/?/)
+	return s !== null ? s[1] : 'home'
+}
+
+// const setBodySlug = (name) => {
+// 	document.querySelector('body').setAttribute('data-slug', getPageSlug(name))
+// }
+window.getPageSlug = getPageSlug// setBodySlug()setTimeout(() => {		// document.querySelector('a[href]').addEventListener('click', e => {	// 	console.log(e.target.tagName, document.querySelector('a[href]').tagName)	// 	if(e.target.href !== '#') {	// 		console.log('clicked!', e.target)	// 		setBodySlug()	// 	}	// })		if (document.querySelector('a[href="#"]') !== null) {		document.querySelector('a[href="#"]').addEventListener('click', function (e) {			e.preventDefault()		})	}	})
