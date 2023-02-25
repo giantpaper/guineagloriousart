@@ -8,16 +8,17 @@
 			<div class="md:text-left flex items-center justify-center md:justify-start gap-2">
 				Made by me!
 				|
-				<ul class="flex links icons gap-3">
-					<li class="mastodon"><a href="https://mastodon.social/@giantpaper" title="Mastodon" target="_blank" rel="noopener me">Mastodon</a></li>
+				<ul class="flex socials icons gap-3">
+					<li class="mastodon"><a href="https://mastodon.social/@giantpaper" title="Mastodon" target="_blank" rel="noopener me"><span>I'm on Mastodon!</span></a></li>
+					<li class="github"><a href="https://github.com/giantpaper/guineagloriousart" title="Github" target="_blank" rel="noopener me"><span>View on Github</span></a></li>
 				</ul>
 			</div>
 			<div class="md:text-right flex items-center justify-center md:justify-end gap-3 made_with_love">
 				<span class="label">Made with love using</span>
 				<ul class="flex links icons gap-3">
-					<li class="storyblok"><a href="https://www.storyblok.com/" title="Storyblok" target="_blank" rel="noopener">Storyblok</a></li>
-					<li class="vue"><a href="https://vuejs.org/" title="Vue" target="_blank" rel="noopener">Vue</a></li>
-					<li class="tailwind"><a href="https://tailwindcss.com/" title="Tailwind" target="_blank" rel="noopener">Tailwind</a></li>
+					<li class="storyblok"><a href="https://www.storyblok.com/" title="Storyblok" target="_blank" rel="noopener"><span>Storyblok</span></a></li>
+					<li class="vue"><a href="https://vuejs.org/" title="Vue" target="_blank" rel="noopener"><span>Vue</span></a></li>
+					<li class="tailwind"><a href="https://tailwindcss.com/" title="Tailwind" target="_blank" rel="noopener"><span>Tailwind</span></a></li>
 				</ul>
 			</div>
 		</div>
