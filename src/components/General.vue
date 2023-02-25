@@ -1,5 +1,5 @@
 <template>
-	<div class="text prose mx-auto" v-html="text"></div>
+	<div :class="'text prose mx-auto py-8 '+blok.ClassNames" v-html="text"></div>
 </template>
 
 <script setup>
