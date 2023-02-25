@@ -13,6 +13,7 @@ import Page from './components/Page.vue'
 import Body from './components/Body.vue'
 import Seo from './components/SEO.vue'
 import Spacer from './components/Spacer.vue'
+import Thumbnail from './components/Thumbnail.vue'
 
 import './assets/icons/storyblok_logo.png'
 import './assets/icons/vue_logo.png'
@@ -35,5 +36,6 @@ app.component('Page', Page)
 app.component('Body', Body)
 app.component('SEO', Seo)
 app.component('Spacer', Spacer)
+app.component('Thumbnail', Thumbnail)
 
 app.mount('#app')
