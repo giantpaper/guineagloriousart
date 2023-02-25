@@ -1,5 +1,5 @@
 <template>
-	<section v-editable="blok" class="page py-8 blok">
+	<section v-editable="blok" class="page blok">
 		<StoryblokComponent
 			v-for="blok in blok.body"
 			:blok="blok"
