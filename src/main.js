@@ -9,6 +9,7 @@ import Gallery from './components/Gallery.vue'
 import GalleryImage from './components/GalleryImage.vue'
 import General from './components/General.vue'
 import Heading from './components/Heading.vue'
+import Image from './components/Image.vue'
 import Page from './components/Page.vue'
 import Body from './components/Body.vue'
 import Seo from './components/SEO.vue'
@@ -32,6 +33,7 @@ app.component('Gallery', Gallery)
 app.component('GalleryImage', GalleryImage)
 app.component('General', General)
 app.component('Heading', Heading)
+app.component('Image', Image)
 app.component('Page', Page)
 app.component('Body', Body)
 app.component('SEO', Seo)
