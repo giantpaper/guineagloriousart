@@ -11,6 +11,7 @@ import General from './components/General.vue'
 import Heading from './components/Heading.vue'
 import Page from './components/Page.vue'
 import Body from './components/Body.vue'
+import Seo from './components/SEO.vue'
 import Spacer from './components/Spacer.vue'
 
 import './assets/icons/storyblok_logo.png'
@@ -32,6 +33,7 @@ app.component('General', General)
 app.component('Heading', Heading)
 app.component('Page', Page)
 app.component('Body', Body)
+app.component('SEO', Seo)
 app.component('Spacer', Spacer)
 
 app.mount('#app')
