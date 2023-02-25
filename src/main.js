@@ -4,6 +4,7 @@ import App from './App.vue'
 import router from './router'
 
 // Components
+import Body from './components/Body.vue'
 import FeatImage from './components/FeatImage.vue'
 import Gallery from './components/Gallery.vue'
 import GalleryImage from './components/GalleryImage.vue'
@@ -28,6 +29,7 @@ app.use(StoryblokVue, {
 })
 
 app.use(router)
+app.component('Body', Body)
 app.component('FeatImage', FeatImage)
 app.component('Gallery', Gallery)
 app.component('GalleryImage', GalleryImage)
