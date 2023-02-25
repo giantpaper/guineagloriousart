@@ -12,7 +12,6 @@ import General from './components/General.vue'
 import Heading from './components/Heading.vue'
 import Image from './components/Image.vue'
 import Page from './components/Page.vue'
-import Body from './components/Body.vue'
 import Seo from './components/SEO.vue'
 import Spacer from './components/Spacer.vue'
 import Thumbnail from './components/Thumbnail.vue'
@@ -37,7 +36,6 @@ app.component('General', General)
 app.component('Heading', Heading)
 app.component('Image', Image)
 app.component('Page', Page)
-app.component('Body', Body)
 app.component('SEO', Seo)
 app.component('Spacer', Spacer)
 app.component('Thumbnail', Thumbnail)
@@ -55,4 +53,37 @@ const getPageSlug = (name) => {
 // const setBodySlug = (name) => {
 // 	document.querySelector('body').setAttribute('data-slug', getPageSlug(name))
 // }
-window.htagClasses = () => {	setTimeout(() => {				document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(element => {			let classes = element.className						if ( classes === undefined || classes === null || ( classes !== undefined && classes !== null && classes.match(/^(.+ )?h[0-6]/) === null ) ) {				element.classList.add(element.tagName.toLowerCase());			}		})	})}window.getPageSlug = getPageSlug// setBodySlug()setTimeout(() => {		// document.querySelector('a[href]').addEventListener('click', e => {	// 	console.log(e.target.tagName, document.querySelector('a[href]').tagName)	// 	if(e.target.href !== '#') {	// 		console.log('clicked!', e.target)	// 		setBodySlug()	// 	}	// })		if (document.querySelector('a[href="#"]') !== null) {		document.querySelector('a[href="#"]').addEventListener('click', function (e) {			e.preventDefault()		})	}	})
+
+window.htagClasses = () => {
+	setTimeout(() => {
+		
+		document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(element => {
+			let classes = element.className
+			
+			if ( classes === undefined || classes === null || ( classes !== undefined && classes !== null && classes.match(/^(.+ )?h[0-6]/) === null ) ) {
+				element.classList.add(element.tagName.toLowerCase());
+			}
+		})
+	})
+}
+
+window.getPageSlug = getPageSlug
+
+// setBodySlug()
+setTimeout(() => {
+	
+	// document.querySelector('a[href]').addEventListener('click', e => {
+	// 	console.log(e.target.tagName, document.querySelector('a[href]').tagName)
+	// 	if(e.target.href !== '#') {
+	// 		console.log('clicked!', e.target)
+	// 		setBodySlug()
+	// 	}
+	// })
+	
+	if (document.querySelector('a[href="#"]') !== null) {
+		document.querySelector('a[href="#"]').addEventListener('click', function (e) {
+			e.preventDefault()
+		})
+	}
+	
+})
