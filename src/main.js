@@ -19,8 +19,6 @@ import Thumbnail from './components/Thumbnail.vue'
 import './assets/icons/storyblok_logo.png'
 import './assets/icons/vue_logo.png'
 
-import Favicon from '../src/favicon.png'
-
 import './assets/main.scss'
 
 const app = createApp(App)
@@ -28,12 +26,6 @@ app.use(StoryblokVue, {
 	accessToken: import.meta.env.VITE_PREVIEW_TOKEN,
 	use: [apiPlugin],
 })
-
-let shortcut_icon = document.createElement('link')
-shortcut_icon.getAttribute('rel', 'icon')
-shortcut_icon.getAttribute('href', Favicon)
-
-document.querySelector('head').append(shortcut_icon)
 
 app.use(router)
 app.component('Body', Body)
