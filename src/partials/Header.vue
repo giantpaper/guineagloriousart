@@ -25,7 +25,7 @@
 </script>
 <template>
 	<header class="flex justify-between lg:flex-end lg:block">
-		<span class="block p-8"><RouterLink class="logo w-full max-w-full block" to="/"><Logo class="w-full max-w-full block" id="logo" fill="currentcolor" /></RouterLink></span>
+		<span class="block p-4 md:p-8"><RouterLink class="logo w-full max-w-full block" to="/"><Logo class="w-full max-w-full block" id="logo" fill="currentcolor" /></RouterLink></span>
 		<button id="mainnav_btn" class="lg:!hidden mr-8"><i></i><span class="sr-only">Toggle Mobile Menu</span></button>
 		<nav id="mainnav" class="hidden lg:block">
 			<RouterLink to="/">Home</RouterLink>
@@ -93,9 +93,10 @@
 			}
 		}
 		.logo {
-			max-width: 300px;
-			transform: translateY(-10px);
+			max-width: 175px;
+			transform: translateY(-15%);
 			@media (min-width: 1024px) {
+				max-width: 300px;
 				transform: translateY(0);
 				margin-left: auto;
 			}
