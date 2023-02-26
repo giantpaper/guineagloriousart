@@ -10,7 +10,7 @@
 				|
 				<ul class="flex socials icons gap-3">
 					<li class="mastodon"><a href="https://mastodon.social/@giantpaper" title="Mastodon" target="_blank" rel="noopener me"><span>I'm on Mastodon!</span></a></li>
-					<li class="github"><a href="https://github.com/giantpaper/guineagloriousart" title="Github" target="_blank" rel="noopener me"><span>View on Github</span></a></li>
+					<li class="github"><a href="https://github.com/giantpaper/guineagloriousart" title="Github" target="_blank" rel="noopener me"><span>View on Github!</span></a></li>
 				</ul>
 			</div>
 			<div class="md:text-right flex items-center justify-center md:justify-end gap-3 made_with_love">
@@ -48,31 +48,31 @@
 	.icons {
 		li {
 			position: relative;
-			&:before {
-				border-radius: 1000px;
-				content: '';
-				background: #ddd;
-				display: block;
-				aspect-ratio: 1/1;
-				width: 2.25rem;
-			}
+			background: #ddd;
+			aspect-ratio: 1/1;
+			border-radius: 1000px;
+			height: 2.25rem;
 			a {
+				border-radius: 1000px;
+				display: flex;
+				padding: 0;
 				&:before {
 					display: block;
-					width: 100%;
+					width: 2.25rem;
+					height: 2.25rem;
 					aspect-ratio: 1/1;
 					content: '';
 					background: no-repeat center / 50%;
 				}
-				border-radius: 1000px;
-				position: absolute;
-					top: 0;
-					left: 0;
-					right: 0;
-					bottom: 0;
-				aspect-ratio: inherit;
-				display: block;
-				overflow: hidden;
+				span {
+					width: 0;
+					height: 2.25rem;
+					display: flex;
+					align-items: center;
+					white-space: nowrap;
+					overflow: hidden;
+					opacity: 0;
+				}
 			}
 			&.storyblok a:before {
 				background-image: url('../assets/icons/storyblok_logo.png');
@@ -90,6 +90,53 @@
 				background-image: url('../assets/icons/Tailwind_logo.svg');
 				background-size: 75%;
 			}
+		}
+		&.socials {
+			li {
+				a {
+					&:hover {
+						color: #008273;
+						span {
+							animation: socialIcons 0.3s normal forwards;
+						}
+					}
+					&:not(:hover) {
+						span {
+							animation: socialIconsOut 0.3s normal forwards;
+						}
+					}
+				}
+			}
+		}
+	}
+	@keyframes socialIcons {
+		0% {
+			width: 0;
+			opacity: 0;
+			padding: 0;
+		}
+		50% {
+			width: 19ch;
+		}
+		100% {
+			opacity: 1;
+			width: 19ch;
+			padding-right: 1rem;
+		}
+	}
+	@keyframes socialIconsOut {
+		0% {
+			opacity: 1;
+			width: 19ch;
+			padding-right: 1rem;
+		}
+		50% {
+			width: 19ch;
+		}
+		100% {
+			width: 0;
+			opacity: 0;
+			padding: 0;
 		}
 	}
 	.label {
