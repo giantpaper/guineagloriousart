@@ -5,7 +5,7 @@
 	</header>
 	
 	<figure class="pb-8">
-		<img :src="blok.Image.filename + '/m/1000x0/'" class="mx-auto" :alt="blok.Image.alt" />
+		<IMG :src="blok.Image.filename + '/m/1000x0/'" class="mx-auto" :alt="blok.Image.alt" />
 	</figure>
 	
 	<div class="text prose mx-auto" v-if="description!==''" v-html="description"></div>
@@ -30,15 +30,17 @@
 	}
 </style>
 <script setup>
+	import IMG from './Image.vue';
+	
+	import { computed } from "vue"
+	import { renderRichText } from "@storyblok/vue"
+	
 	let props = defineProps({
 		blok: {
 			type: Object,
 			required: true,
 		},
 	})
-	
-	import { computed } from "vue"
-	import { renderRichText } from "@storyblok/vue"
 	
 	const description = computed(() => renderRichText(props.blok.Description))
 	

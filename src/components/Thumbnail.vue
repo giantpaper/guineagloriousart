@@ -1,9 +1,9 @@
 <template>
-	<RouterLink :to="props.attr.full_slug" class="thumbnail"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" :data-src="attr.Image.filename + '/m/50x50/filters:focal(' +attr.Image.focus+ '):quality(10)'"
+	<RouterLink :to="props.attr.full_slug" class="thumbnail"><IMG src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" :data-src="attr.Image.filename + '/m/50x50/filters:focal(' +attr.Image.focus+ '):quality(10)'"
 			style="filter: blur(10px)"
 			:alt="attr.Image.alt"
 			:title="attr.Image.Title"
-			:data-srcset="
+			:dataSrcSet="
 					attr.Image.filename + '/m/100x100/filters:focal(' +attr.Image.focus+ ') 100w,'
 				+ attr.Image.filename + '/m/200x200/filters:focal(' +attr.Image.focus+ ') 200w,'
 				+ attr.Image.filename + '/m/350x350/filters:focal(' +attr.Image.focus+ ') 350w,'
@@ -15,6 +15,7 @@
 </template>
 
 <script setup>
+	import IMG from './Image.vue'
 	import { RouterLink } from 'vue-router'
 	const props = defineProps({
 		attr: {
@@ -28,19 +29,6 @@
 	import { renderRichText } from "@storyblok/vue";
 	
 	const description = computed(() => renderRichText(props.attr.Description));
-	
-	
-	setTimeout(() => {
-		
-		document.querySelectorAll('img[data-src]').forEach(img => {
-			let src = img.dataset.src
-			img.src = src
-		})
-		document.querySelectorAll('img[data-srcset]').forEach(img => {
-			let srcset = img.dataset.srcset
-			img.srcset = srcset
-		})
-	})
 </script>
 
 <style lang="scss" scoped>

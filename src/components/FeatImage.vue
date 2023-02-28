@@ -9,7 +9,17 @@
 		<slide v-for="story in data.stories"
 			data-te-carousel-item
 			>
-			<RouterLink :to="'/' + story.full_slug + '/'"><img :src="story.content.Image.filename + '/m/1500x900/'" />
+			<RouterLink :to="'/' + story.full_slug + '/'"><IMG
+				:src="story.content.Image.filename + '/m/400x300/'"
+				:dataSrcSet="
+						story.content.Image.filename + '/m/400x300/ 400w,'
+					+ story.content.Image.filename + '/m/500x400/ 500w,'
+					+ story.content.Image.filename + '/m/768x400/ 768w,'
+					+ story.content.Image.filename + '/m/1024x500/ 1024w,'
+					+ story.content.Image.filename + '/m/1280x800/ 1280w,'
+					+ story.content.Image.filename + '/m/1500x900/ 1500w,'
+					+ story.content.Image.filename + '/m/1700x900/ 1700w'"
+			:alt="story.content.Image.alt" />
 				<h2 class="h1">{{ story.content.Title }}</h2>
 			</RouterLink>
 		</slide>
@@ -38,6 +48,7 @@ export default {
 </script>
 
 <script setup>
+	import IMG from './Image.vue'
 	import { useStoryblokBridge, useStoryblokApi } from "@storyblok/vue";
 	import Thumbnail from './Thumbnail.vue'
 	const props = defineProps({
