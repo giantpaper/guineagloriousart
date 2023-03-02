@@ -1,7 +1,10 @@
 <template>
-	<img :src="src" :alt="alt" :class="class"
-		:data-srcset="dataSrcSet"
-	/>
+	<picture>
+		<source :data-srcset="dataSrcSet" type="image/png" />
+		<img :src="src" :alt="alt" :class="class"
+			:data-srcset="dataSrcSet"
+		/>
+	</picture>
 </template>
 
 <script setup>
