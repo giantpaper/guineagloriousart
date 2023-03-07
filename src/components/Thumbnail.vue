@@ -49,6 +49,7 @@
 			content: '';
 			transition: opacity 0.05s;
 		}
+		picture,
 		img {
 			width: 100%;
 			filter: blur(0) !important;

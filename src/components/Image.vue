@@ -1,6 +1,6 @@
 <template>
 	<picture>
-		<source :data-srcset="dataSrcSet" type="image/png" />
+		<source :data-srcset="dataSrcSetWebp" v-if="dataSrcSetWebp!=''" type="image/webp" />
 		<img :src="src" :alt="alt" :class="class"
 			:data-srcset="dataSrcSet"
 		/>
@@ -15,7 +15,7 @@
 		},
 		class: {
 			type: String,
-			required: true,
+			required: false,
 		},
 		alt: {
 			type: String,
@@ -23,19 +23,23 @@
 		},
 		srcSet: {
 			type: String,
-			required: true,
+			required: false,
 		},
 		dataSrcSet: {
 			type: String,
-			required: true,
+			required: false,
+		},
+		dataSrcSetWebp: {
+			type: String,
+			required: false,
 		},
 	})
 	setTimeout(() => {
-		document.querySelectorAll('img[data-src]').forEach(img => {
+		document.querySelectorAll('img[data-src],source[data-src]').forEach(img => {
 			let src = img.dataset.src
 			img.src = src
 		})
-		document.querySelectorAll('img[data-srcset]').forEach(img => {
+		document.querySelectorAll('img[data-srcset],source[data-srcset]').forEach(img => {
 			let srcset = img.dataset.srcset
 			img.srcset = srcset
 		})

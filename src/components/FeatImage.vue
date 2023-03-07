@@ -8,21 +8,23 @@
 	>
 		<slide v-for="story in data.stories"
 			data-te-carousel-item
-			>
-			<RouterLink :to="'/' + story.full_slug + '/'"><IMG
+			><div class="inner">
+			<IMG
 				:src="story.content.Image.filename + '/m/400x300/'"
+				:dataSrcSetWebp="
+					+ story.content.Image.filename + '/m/500x400/' + filtersListWebp + ' 500w,'
+					+ story.content.Image.filename + '/m/768x400/' + filtersListWebp + ' 768w,'
+					+ story.content.Image.filename + '/m/1024x500/' + filtersListWebp + ' 1024w,'
+					+ story.content.Image.filename + '/m/1700x900/' + filtersListWebp + ' 1700w'"
 				:dataSrcSet="
-						story.content.Image.filename + '/m/400x300/ 400w,'
-					+ story.content.Image.filename + '/m/500x400/ 500w,'
-					+ story.content.Image.filename + '/m/768x400/ 768w,'
-					+ story.content.Image.filename + '/m/1024x500/ 1024w,'
-					+ story.content.Image.filename + '/m/1280x800/ 1280w,'
-					+ story.content.Image.filename + '/m/1500x900/ 1500w,'
-					+ story.content.Image.filename + '/m/1700x900/ 1700w'"
-			:alt="story.content.Image.alt" />
-				<h2 class="h1">{{ story.content.Title }}</h2>
-			</RouterLink>
-		</slide>
+					+ story.content.Image.filename + '/m/500x400/' + filtersList + ' 500w,'
+					+ story.content.Image.filename + '/m/768x400/' + filtersList + ' 768w,'
+					+ story.content.Image.filename + '/m/1024x500/' + filtersList + ' 1024w,'
+					+ story.content.Image.filename + '/m/1700x900/' + filtersList + ' 1700w'"
+				:alt="story.content.Image.alt"
+			/>
+			<h2 class="h1"><RouterLink :to="'/' + story.full_slug + '/'">{{ story.content.Title }}</RouterLink></h2>
+		</div></slide>
 		<template #addons>
 			<Navigation />
 			<Pagination />
@@ -60,6 +62,13 @@ export default {
 	let uuids = props.blok.Images.join()
 	const storyblokApi = useStoryblokApi();
 	const { data } = await storyblokApi.get("cdn/stories", { version: "draft", by_uuids: uuids });
+	let filtersList = window.filters({
+		quality: 70,
+	})
+	let filtersListWebp = window.filters({
+		quality: 70,
+		format: 'webp'
+	})
 	
 	window.htagClasses()
 </script>
@@ -67,33 +76,30 @@ export default {
 <style lang="scss" scoped>
 	.carousel {
 		margin: 0;
+		h2 {
+			backdrop-filter: blur(30px);
+			margin: 0;
+			color: var(--color-text);
+			position: absolute;
+				bottom: 1rem;
+				right: 1rem;
+			&:after {
+				margin-top: 0;
+			}
+		}
+		a {
+			color: currentcolor;
+			display: block;
+			padding: 2rem;
+			img {
+				display: block;
+			}
+			&:hover {
+				background: none;
+			}
+		}
 		&__slide {
 			position: relative;
-		}
-		&__viewport {
-			a {
-				display: block;
-				padding: 0;
-				img {
-					display: block;
-				}
-				&:hover {
-					background: none;
-				}
-				h2 {
-					backdrop-filter: blur(30px);
-					padding: 2rem;
-					margin: 0;
-					color: var(--color-text);
-					position: absolute;
-						bottom: 1rem;
-						right: 1rem;
-					&:after {
-						margin-top: 1rem;
-						margin-bottom: 0;
-					}
-				}
-			}
 		}
 	}
 </style>
