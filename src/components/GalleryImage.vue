@@ -8,24 +8,60 @@
 		<IMG :src="blok.Image.filename + '/m/1000x0/'" class="mx-auto" :alt="blok.Image.alt" />
 	</figure>
 	
-	<div class="text prose mx-auto" v-if="description!==''" v-html="description"></div>
-	
-	<table v-if="blok.Specs.tbody" class="mt-8 specs w-full display mb-12">
-		<tr v-for="row in blok.Specs.tbody" class="grid grid-cols-2">
-			<th>{{ row.body[0].value }}</th>
-			<td>{{ row.body[1].value }}</td>
-		</tr>
-	</table>
+	<div class="info table mx-auto mb-16 p-8">
+		<div class="text prose mx-auto mb-8" v-if="description!=='<p></p>'" v-html="description"></div>
+		
+		<table v-if="blok.Specs.tbody" class="specs w-full display">
+			<tr v-for="row in blok.Specs.tbody" class="grid grid-cols-2">
+				<th>{{ row.body[0].value }}</th>
+				<td>{{ row.body[1].value }}</td>
+			</tr>
+		</table>
+	</div>
 </template>
 <style lang="scss" scoped>
 	.specs {
 		border-collapse: collapse;
+		margin: 0 auto;
+		@media (min-width: 768px) {
+			min-width: 300px;
+			max-width: 350px;
+		}
 		td,th {
 			padding: 0.25rem 0.5rem;
 		}
 		th {
 			text-align: right;
 			font-weight: bold;
+		}
+	}
+	.info {
+		max-width: 500px;
+		position: relative;
+		& > * {
+			position: relative;
+			z-index: 1;
+		}
+		&:before,
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 0;
+		}
+		&:before {
+			box-shadow: 0 0.5rem 1rem transparentize(black, 0.9);
+			transform: scaleX(96%);
+		}
+		&:after {
+			background: #fff;
+		}
+		.text {
+			width: 600px;
 		}
 	}
 </style>

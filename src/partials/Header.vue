@@ -77,6 +77,8 @@
 		}
 		@media (min-width: 1280px) {
 			display: grid;
+			max-width: unset;
+			justify-content: flex-end;
 			grid-template-columns: 66.6666% auto;
 		}
 		a {
