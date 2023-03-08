@@ -2,9 +2,9 @@
 	<carousel class="carousel_container blok !p-0"
 	v-editable="blok"
 	:autoplay="4000"
-	id="feat_image"
 	:items-to-show="1"
 	:wrap-around="true"
+	id="feat_image"
 	>
 		<slide v-for="story in data.stories"
 			data-te-carousel-item
@@ -75,22 +75,31 @@ export default {
 
 <style lang="scss">
 	
-	.carousel button.carousel {
+	.carousel {
+		--vc-pgn-width: 0.5rem;
+		--vc-pgn-height: var(--vc-pgn-width);
+		--vc-pgn-border-radius: var(--vc-pgn-width);
+		--vc-pgn-background-color: var(--vt-c-white);
+		--vc-pgn-active-color: var(--color-text);
+		--vc-pgn-margin: 2px;
+		--vc-nav-color-hover: currentcolor;
+		margin: 0;
 		&__prev,
 		&__next {
 			cursor: pointer;
+			transition: all 0.3s;
 			@media (max-width: 1023px) {
 				top: unset;
 				bottom: 0;
 				height: calc(3rem + 4rem);
 			}
+			&:hover {
+				border-radius: 100px;
+				backdrop-filter: blur(10px);
+				background: transparentize(white, 0.75);
+				box-shadow: 0 0 1rem transparentize(black, 0.75);
+			}
 		}
-	}
-</style>
-
-<style lang="scss" scoped>
-	.carousel {
-		margin: 0;
 		h2 {
 			margin: 0;
 			@media (max-width: 1023px) {
@@ -114,7 +123,7 @@ export default {
 		a {
 			color: currentcolor;
 			display: block;
-			padding: 2rem 2rem 0;
+			padding: 1rem 1rem 0;
 			img {
 				display: block;
 			}
@@ -127,6 +136,26 @@ export default {
 		}
 		&__pagination {
 			margin: 2rem 0;
+			gap: var(--vc-pgn-margin);
+			@media (min-width: 1024px) {
+				flex-direction: column;
+				position: absolute;
+				justify-content: center;
+				align-items: center;
+				bottom: 0;
+				left: 2rem;
+			}
+			&-button {
+				border-radius: 100px;
+				border: 1px transparent solid;
+				transition: border-color 0.3s;
+				&:after {
+					box-shadow: 0 0 1.5rem transparentize(black, 0.5);
+				}
+				&--active {
+					border-color: var(--vc-pgn-active-color);
+				}
+			}
 		}
 	}
 </style>
