@@ -2,6 +2,13 @@
 	<div :class="'text prose mx-auto p-8 '+blok.ClassNames" v-html="text"></div>
 </template>
 
+<style lang="scss" scoped>
+	.text {
+		&:last-child {
+			padding-bottom: 4rem;
+		}
+	}
+</style>
 <script setup>
 	const props = defineProps({
 		blok: {
