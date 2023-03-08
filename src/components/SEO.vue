@@ -5,11 +5,11 @@
 			if (existing_tag === null) {
 				let meta = document.createElement(tag)
 				meta.setAttribute('name', name)
-				meta.setAttribute('value', value)
+				meta.setAttribute('content', value)
 				document.querySelector('head').append(meta)
 			}
 			else {
-				existing_tag.setAttribute('value', value)
+				existing_tag.setAttribute('content', value)
 			}
 		}
 		else {
