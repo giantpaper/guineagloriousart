@@ -39,6 +39,7 @@
 			.h1 {
 				font-size: 3.4rem;
 				font-family: 'lindsey-signature', cursive;
+				font-weight: normal;
 			}
 		}
 	}
