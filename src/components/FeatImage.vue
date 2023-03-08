@@ -78,6 +78,7 @@ export default {
 	.carousel button.carousel {
 		&__prev,
 		&__next {
+			cursor: pointer;
 			@media (max-width: 1023px) {
 				top: unset;
 				bottom: 0;
