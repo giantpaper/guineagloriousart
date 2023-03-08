@@ -31,6 +31,9 @@
 			height: 1px;
 			margin: 2rem auto;
 		}
+		span {
+			font-style: italic;
+			text-transform: none !important;
 		}
 		@at-root body[data-slug="gallery-image"] {
 			.h1 {
