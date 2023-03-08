@@ -39,9 +39,6 @@ main {
     padding: 0 3rem;
     max-width: 900px;
   }
-  @media (min-width: 1280px) and (max-width: 1439px) {
-    min-width: 65vw;
-  }
 }
 body[data-slug="home"] {
   main {
