@@ -125,5 +125,8 @@ export default {
 		&__slide {
 			position: relative;
 		}
+		&__pagination {
+			margin: 2rem 0;
+		}
 	}
 </style>
