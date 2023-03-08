@@ -114,7 +114,7 @@ export default {
 		a {
 			color: currentcolor;
 			display: block;
-			padding: 2rem;
+			padding: 2rem 2rem 0;
 			img {
 				display: block;
 			}
