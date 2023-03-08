@@ -22,7 +22,7 @@
 		}
 	}
 	.h1 {
-		font-size: 2rem;
+		font: bold 3rem 'playfair-display', serif;
 		&:after {
 			background: currentcolor;
 			content: '';
