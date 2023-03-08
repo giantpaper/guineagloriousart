@@ -8,8 +8,8 @@
 		<IMG :src="blok.Image.filename + '/m/1000x0/'" class="mx-auto" :alt="blok.Image.alt" />
 	</figure>
 	
-	<div class="info table mx-auto mb-16 p-8">
-		<div class="text prose mx-auto mb-8" v-if="description!=='<p></p>'" v-html="description"></div>
+	<div class="info table mx-auto mb-16 p-8 lg:max-w-500">
+		<div class="text prose mx-auto mb-8 w-full" v-if="description!=='<p></p>'" v-html="description"></div>
 		
 		<table v-if="blok.Specs.tbody" class="specs w-full display">
 			<tr v-for="row in blok.Specs.tbody" class="grid grid-cols-2">
@@ -36,7 +36,6 @@
 		}
 	}
 	.info {
-		max-width: 500px;
 		position: relative;
 		& > * {
 			position: relative;
@@ -59,9 +58,6 @@
 		}
 		&:after {
 			background: #fff;
-		}
-		.text {
-			width: 600px;
 		}
 	}
 </style>
