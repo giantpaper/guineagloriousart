@@ -33,6 +33,7 @@ import Footer from './partials/Footer.vue'
 }
 main {
   padding: 0 1rem;
+  margin: 0 auto;
   @media (min-width: 1024px) {
     min-width: 60vw;
     padding: 0 3rem;
