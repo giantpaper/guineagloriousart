@@ -73,18 +73,41 @@ export default {
 	window.htagClasses()
 </script>
 
+<style lang="scss">
+	
+	.carousel button.carousel {
+		&__prev,
+		&__next {
+			@media (max-width: 1023px) {
+				top: unset;
+				bottom: 0;
+				height: calc(3rem + 4rem);
+			}
+		}
+	}
+</style>
+
 <style lang="scss" scoped>
 	.carousel {
 		margin: 0;
 		h2 {
-			backdrop-filter: blur(30px);
 			margin: 0;
-			color: var(--color-text);
-			position: absolute;
-				bottom: 1rem;
-				right: 1rem;
-			&:after {
-				margin-top: 0;
+			@media (max-width: 1023px) {
+				&:after {
+					display: none;
+				}
+			}
+			@media (min-width: 1024px) {
+				backdrop-filter: blur(30px);
+				background: transparentize(white, 0.7);
+				margin: 0;
+				color: var(--color-text);
+				position: absolute;
+					bottom: 1rem;
+					right: 1rem;
+				&:after {
+					margin-top: 0;
+				}
 			}
 		}
 		a {
