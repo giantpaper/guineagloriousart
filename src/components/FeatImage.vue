@@ -10,14 +10,14 @@
 			data-te-carousel-item
 			><div class="inner">
 			<IMG
-				:src="story.content.Image.filename + '/m/400x300/'"
+				:src="story.content.Image.filename + '/m/400x300/filters:format(png)'"
 				:dataSrcSetWebp="
-					+ story.content.Image.filename + '/m/500x400/' + filtersListWebp + ' 500w,'
+						story.content.Image.filename + '/m/500x400/' + filtersListWebp + ' 500w,'
 					+ story.content.Image.filename + '/m/768x400/' + filtersListWebp + ' 768w,'
 					+ story.content.Image.filename + '/m/1024x500/' + filtersListWebp + ' 1024w,'
 					+ story.content.Image.filename + '/m/1700x900/' + filtersListWebp + ' 1700w'"
 				:dataSrcSet="
-					+ story.content.Image.filename + '/m/500x400/' + filtersList + ' 500w,'
+						story.content.Image.filename + '/m/500x400/' + filtersList + ' 500w,'
 					+ story.content.Image.filename + '/m/768x400/' + filtersList + ' 768w,'
 					+ story.content.Image.filename + '/m/1024x500/' + filtersList + ' 1024w,'
 					+ story.content.Image.filename + '/m/1700x900/' + filtersList + ' 1700w'"
