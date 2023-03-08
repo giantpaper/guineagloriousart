@@ -23,7 +23,7 @@
 					+ story.content.Image.filename + '/m/1700x900/' + filtersList + ' 1700w'"
 				:alt="story.content.Image.alt"
 			/>
-			<h2 class="h1"><RouterLink :to="'/' + story.full_slug + '/'">{{ story.content.Title }}</RouterLink></h2>
+			<h2 class="h1 handwritten"><RouterLink :to="'/' + story.full_slug + '/'">{{ story.content.Title }}</RouterLink></h2>
 		</div></slide>
 		<template #addons>
 			<Navigation />

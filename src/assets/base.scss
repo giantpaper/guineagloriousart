@@ -47,6 +47,13 @@
   font-style: normal;
 }
 
+@layer components {
+  .handwritten {
+    font-size: 3.4rem;
+    font-family: 'lindsey-signature', cursive;
+  }
+}
+
 // @media (prefers-color-scheme: dark) {
 //   :root {
 //     --color-background: var(--vt-c-black);
