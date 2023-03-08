@@ -31,19 +31,6 @@
 			height: 1px;
 			margin: 2rem auto;
 		}
-		@at-root body[data-slug="home"] {
-			main header:first-of-type {
-				.h1 {
-					font-weight: bold;
-					font-size: 1.5rem;
-					margin-top: 0;
-					letter-spacing: 0.1rem;
-					text-transform: uppercase;
-					&:after {
-						display: none;
-					}
-				}
-			}
 		}
 		@at-root body[data-slug="gallery-image"] {
 			.h1 {
