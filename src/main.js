@@ -1,16 +1,20 @@
-import { createApp } from 'vue'
+import { createApp, defineAsyncComponent } from 'vue'
 import { StoryblokVue, apiPlugin } from '@storyblok/vue'
 import App from './App.vue'
 import router from './router'
 
 // Components
 import Body from './components/Body.vue'
-import FeatImage from './components/FeatImage.vue'
+const FeatImage = defineAsyncComponent(() =>
+	import('./components/FeatImage.vue')
+)
 import Gallery from './components/Gallery.vue'
 import GalleryImage from './components/GalleryImage.vue'
 import General from './components/General.vue'
 import Heading from './components/Heading.vue'
-import Image from './components/Image.vue'
+const Image = defineAsyncComponent(() =>
+	import('./components/Image.vue')
+)
 import Page from './components/Page.vue'
 import Seo from './components/SEO.vue'
 import Spacer from './components/Spacer.vue'
