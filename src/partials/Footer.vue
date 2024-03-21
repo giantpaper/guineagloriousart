@@ -9,7 +9,7 @@
 				Made by me!
 				|
 				<ul class="flex socials icons gap-3">
-					<li class="mastodon"><a href="https://mastodon.social/@giantpaper" title="Mastodon" target="_blank" rel="noopener me"><span>I'm on Mastodon!</span></a></li>
+					<li class="mastodon"><a href="https://mas.to/@giantpaper" title="Mastodon" target="_blank" rel="noopener me"><span>I'm on Mastodon!</span></a></li>
 					<li class="github"><a href="https://github.com/giantpaper/guineagloriousart" title="Github" target="_blank" rel="noopener me"><span>View on Github!</span></a></li>
 				</ul>
 			</div>
