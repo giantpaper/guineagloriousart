@@ -59,11 +59,11 @@ export default {
 	let filtersList = window.filters({
 		quality: 70,
 	})
-	let filtersListWebp = window.filters({
-		quality: 70,
-		format: 'webp'
-	})
-	
+	// let filtersListWebp = window.filters({
+	// 	quality: 70,
+	// 	format: 'webp'
+	// })
+
 	window.htagClasses()
 </script>
 
