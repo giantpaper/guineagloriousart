@@ -9,13 +9,8 @@
 		<slide v-for="story in data.stories"
 			data-te-carousel-item
 			><div class="inner">
-			<IMG
+			<Image
 				:src="story.content.Image.filename + '/m/400x300/filters:format(png)'"
-				:dataSrcSetWebp="
-						story.content.Image.filename + '/m/500x400/' + filtersListWebp + ' 500w,'
-					+ story.content.Image.filename + '/m/768x400/' + filtersListWebp + ' 768w,'
-					+ story.content.Image.filename + '/m/1024x500/' + filtersListWebp + ' 1024w,'
-					+ story.content.Image.filename + '/m/1700x900/' + filtersListWebp + ' 1700w'"
 				:dataSrcSet="
 						story.content.Image.filename + '/m/500x400/' + filtersList + ' 500w,'
 					+ story.content.Image.filename + '/m/768x400/' + filtersList + ' 768w,'
@@ -50,7 +45,6 @@ export default {
 </script>
 
 <script setup>
-	import IMG from './Image.vue'
 	import { useStoryblokBridge, useStoryblokApi } from "@storyblok/vue";
 	import Thumbnail from './Thumbnail.vue'
 	const props = defineProps({

@@ -1,5 +1,5 @@
 <template>
-	<RouterLink :to="props.attr.full_slug" class="thumbnail"><IMG src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" :data-src="attr.Image.filename + '/m/50x50/filters:focal(' +attr.Image.focus+ '):quality(10)'"
+	<RouterLink :to="props.attr.full_slug" class="thumbnail"><Image src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" :data-src="attr.Image.filename + '/m/50x50/filters:focal(' +attr.Image.focus+ '):quality(10)'"
 			style="filter: blur(10px)"
 			:alt="attr.Image.alt"
 			:title="attr.Image.Title"
@@ -15,7 +15,6 @@
 </template>
 
 <script setup>
-	import IMG from './Image.vue'
 	import { RouterLink } from 'vue-router'
 	const props = defineProps({
 		attr: {
